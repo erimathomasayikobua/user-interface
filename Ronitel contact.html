@@ -1,0 +1,81 @@
+-<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronitec Wifi Portal</title>
+    <link rel="stylesheet" href="ronitec.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>RONITEC UNLIMITED WIFI</h1>
+            </div>
+            <div class="menu">
+                <button id="menu-toggle" aria-label="Toggle Menu">Menu</button>
+                <nav id="dropdown-menu" style="display:none;">
+                    <ul>
+                        <li><a href="RONITEL.html">Home</a></li>
+                        <li><a href="Ronitel about.html">About Us</a></li>
+                        <li><a href="Ronitel Services.html">Services</a></li>
+                        <li><a href="Ronitel contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="Ronitel Contact">
+            <h2>You can reach us on or leave us a message</h2>
+            <a href="tel:+1234567890" title="Call our customer support" aria-label="Call our customer support">Call us at </a>*
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const dropdownMenu = document.getElementById("dropdown-menu");
+
+        menuToggle.addEventListener("click", function() {
+            if (dropdownMenu.style.display === "none" || dropdownMenu.style.display === "") {
+                dropdownMenu.style.display = "block";
+            } else {
+                dropdownMenu.style.display = "none";
+            }
+        });
+
+        const contactForm = document.getElementById("contact-form");
+
+        contactForm.addEventListener("submit", function(event) {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const message = document.getElementById("message").value;
+
+            if (!name || !email || !message) {
+                event.preventDefault();
+                alert("Please fill in all required fields.");
+            }
+        });
+    </script>
+</body>
+</html>

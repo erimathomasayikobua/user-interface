@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronitec Wifi Portal</title>
+    <link rel="stylesheet" href="ronitec.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>RONITEC UNLIMITED WIFI</h1>
+            </div>
+            <div class="menu">
+                <button id="menu-toggle" aria-label="Toggle Menu">Menu</button>
+                <nav id="dropdown-menu" style="display:none;">
+                    <ul>
+                        <li><a href="RONITEL.html">Home</a></li>
+                        <li><a href="Ronitel about.htm">About Us</a></li>
+                        <li><a href="Ronitel Services.html">Services</a></li>
+                        <li><a href="Ronitel contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="welcome-section">
+            <h2>About Ronitel</h2>
+        </section>
+            <p>3
+        
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const dropdownMenu = document.getElementById("dropdown-menu");
+
+        menuToggle.addEventListener("click", function() {
+            if (dropdownMenu.style.display === "none" || dropdownMenu.style.display === "") {
+                dropdownMenu.style.display = "block";
+            } else {
+                dropdownMenu.style.display = "none";
+            }
+        });
+
+       const paymentForm = document.getElementById("payment-form");
+        const mobileMoneyFields = document.getElementById("mobile-money-fields");
+        const cardFields = document.getElementById("card-fields");
+        const paymentOptions = paymentForm.querySelectorAll('input[name="payment"]');
+
+        paymentOptions.forEach(option => {
+            option.addEventListener("change", function() {
+                if (this.value === "mobilemoney") {
+                    mobileMoneyFields.style.display = "block";
+                    cardFields.style.display = "none";
+                } else if (this.value === "card") {
+                    mobileMoneyFields.style.display = "none";
+                    cardFields.style.display = "block";
+                }
+            });
+        });
+
+        paymentForm.addEventListener('submit', function(event) {
+            const selectedPayment = document.querySelector('input[name="payment"]:checked').value;
+            if (selectedPayment === 'card') {
+                const cardNumber = document.getElementById('card-number').value;
+                const expiryDate = document.getElementById('expiry-date').value;
+                const cvv = document.getElementById('cvv').value;
+
+                if (!cardNumber || !expiryDate || !cvv) {
+                    event.preventDefault(); 
+                    alert("Please fill in all card details.");
+                }
+            }
+        });
+    </script>
+    <script src="ronitec.js"></script>
+    <script src="Ronitec1.js"></script>
+    <script src="Ronitec2.js"></script>
+    <script src="Ronitec3.js"></script>
+    <script src="Ronitec4.js"></script>
+    <script src="Ronitec5.js"></script>
+    <script src="Ronitec6.js"></script>
+    <script src="Ronitec7.js"></script>9
+</body>
+</html>
